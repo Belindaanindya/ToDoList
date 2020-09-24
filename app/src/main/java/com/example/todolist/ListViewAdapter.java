@@ -12,6 +12,7 @@ public class ListViewAdapter extends ArrayAdapter<String> {
     int groupid;
     String[] item_list;
     Context context;
+
     public ListViewAdapter(Context context, int layoutResourceId, String[] item_list){
         super(context,layoutResourceId, item_list);
         this.context = context;
@@ -19,7 +20,7 @@ public class ListViewAdapter extends ArrayAdapter<String> {
         this.item_list = item_list;
 
     }
-    // Hold views of the ListView to improve its scrolling performance
+
     static class ViewHolder {
         public TextView textview;
         public Button edit;
@@ -28,9 +29,9 @@ public class ListViewAdapter extends ArrayAdapter<String> {
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
-
         View rowView = convertView;
         ViewHolder viewHolder = null;
+
         if(rowView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             rowView = inflater.inflate(groupid, parent, false);
@@ -42,6 +43,7 @@ public class ListViewAdapter extends ArrayAdapter<String> {
         } else {
             viewHolder = (ViewHolder) rowView.getTag();
         }
+
         ViewHolder holder = (ViewHolder) rowView.getTag();
         holder.textview.setText(item_list[position]);
         return rowView;

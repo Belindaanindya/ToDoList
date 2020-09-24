@@ -22,7 +22,7 @@
         android:layout_height="40dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="80dp"
-        android:layout_toLeftOf="@+id/add_btn"
+        android:layout_toLeftOf="@+id/delete_btn"
         android:text="Edit" />
 
     <Button
